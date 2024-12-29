@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "brand": "Canon",
+      "model": "EOS 90D",
+      "price": 1199,
+      "features": ["32.5MP", "4K Video", "Dual Pixel AF"],
+      "imageUrl": "canon-eos-90d.jpg"
+    },
+    {
+      "id": 2,
+      "brand": "Sony",
+      "model": "Alpha a7 III",
+      "price": 1999,
+      "features": ["24.2MP", "4K HDR", "5-Axis Stabilization"],
+      "imageUrl": "sony-alpha-a7iii.jpg"
+    }
+  ]
