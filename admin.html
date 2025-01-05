@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Appareils Photo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Administration - Appareils Photo</h1>
+        <div class="navbar">
+            <button onclick="window.location.href='../src/views/index.html'">Accueil</button>
+            <button onclick="window.location.href='../src/views/listes.html'">Liste</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="add-device">
+            <h2>Ajouter un Appareil Photo</h2>
+            <form id="add-device-form">
+                <label for="brand">Marque</label>
+                <input type="text" id="brand" required>
+
+                <label for="model">Modèle</label>
+                <input type="text" id="model" required>
+
+                <label for="price">Prix</label>
+                <input type="text" id="price" required>
+
+                <label for="image">Image (URL)</label>
+                <input type="text" id="image" required>
+
+                <label for="features">Caractéristiques (séparées par une virgule)</label>
+                <input type="text" id="features" required>
+
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+
+        <div class="appareil-grid" id="appareil-grid">
+            <!-- Les appareils seront chargés ici dynamiquement -->
+        </div>
+    </main>
+
+    
+
+    <!-- Lien vers le script du contrôleur -->
+    <script type="module" src="../dist/Admin.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 {
-  "name": "projecttechno",
+  "name": "projet",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js" 
+    "start": "tsc && node dist/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "typescript": "^5.7.2"
   },
   "devDependencies": {
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2"
   }
 }

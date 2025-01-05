@@ -1,0 +1,316 @@
+/* Réinitialisation des styles par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles globaux */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* En-tête */
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Retirer les puces pour une liste spécifique */
+.appareil-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Retirer les puces des listes */
+ul, ol {
+  list-style-type: none; /* Retirer les puces */
+  padding-left: 0; /* Enlever les espaces à gauche */
+}
+
+
+/* Titre de l'en-tête */
+header h1 {
+  font-size: 2rem;
+}
+
+/* Navigation dans l'en-tête */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.navbar button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #45a049;
+}
+
+/* Liste des appareils photos */
+.appareil-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Apparence de chaque appareil photo */
+.appareil-case {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appareil-case:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+.appareil-case img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.appareil-case img:hover {
+  transform: scale(1.05); /* Zoom léger sur l'image */
+}
+
+.appareil-case legend {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.appareil-case p {
+  color: #777;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Nouveau style pour le bouton "Supprimer" en vert */
+.delete-button {
+  padding: 10px 20px;
+  background-color: #28a745; /* Vert */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.delete-button:hover {
+  background-color: #218838; /* Vert foncé */
+  transform: translateY(-2px); /* Effet de légère élévation */
+}
+
+/* Nouveau style pour le bouton "Modifier" en vert */
+.edit-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Bleu */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.edit-button:hover {
+  background-color: #0056b3; /* Bleu foncé */
+  transform: translateY(-2px); /* Effet de légère élévation */
+}
+
+/* Simple CSS pour masquer et afficher le formulaire */
+#connected-message {
+  color: green;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+
+
+/* Pied de page */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* Styles pour la page Admin */
+.add-device {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.add-device label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.add-device input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-device button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-device button:hover {
+  background-color: #45a049;
+}
+
+/* Formulaire de modification (modif.html) */
+.modif-form {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modif-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.modif-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modif-form button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modif-form button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .appareil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appareil-case {
+    padding: 15px;
+  }
+
+  .add-device {
+    padding: 15px;
+  }
+
+  .modif-form {
+    margin: 20px;
+    padding: 15px;
+  }
+}
+
+/* Style pour le formulaire */
+.appareil-form-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* Ajout d'espacement entre les éléments du formulaire */
+.appareil-form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.appareil-form-container input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.appareil-form-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.appareil-form-container button:hover {
+  background-color: #45a049;
+}

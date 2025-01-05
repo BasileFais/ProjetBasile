@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Appareils Photo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Liste des Appareils Photo</h1>
+        <!-- Ajout de la barre de navigation avec les boutons Accueil et Admin -->
+        <div class="navbar">
+            <button onclick="window.location.href='index.html'">Accueil</button>
+            <button id="admin-button" style="display: none;" onclick="window.location.href='adminconnexion.html'">Admin</button> <!-- Le bouton Admin est masqué par défaut -->
+            <button id="ajout-button" style="display: none;" onclick="window.location.href='ajout.html'">Ajouter un appareil</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Conteneur du formulaire juste sous le header -->
+<div class="appareil-form-container">
+    <h2>Ajouter un appareil</h2>
+    <form id="appareil-form">
+        <label for="brand">Marque</label>
+        <input type="text" id="brand" name="brand" placeholder="Entrez la marque" required>
+
+        <label for="model">Modèle</label>
+        <input type="text" id="model" name="model" placeholder="Entrez le modèle" required>
+
+        <label for="price">Prix</label>
+        <input type="text" id="price" name="price" placeholder="Entrez le prix" required>
+
+        <label for="features">Caractéristiques (séparées par des virgules)</label>
+        <input type="text" id="features" name="features" placeholder="Entrez les caractéristiques" required>
+
+        <button type="submit">Ajouter l'appareil</button>
+    </form>
+</div>
+
+        <div class="appareil-grid" id="appareil-grid">
+            <!-- Les appareils seront chargés ici dynamiquement -->
+        </div>
+    </main>
+
+    <!-- Message si l'utilisateur est connecté -->
+    <div id="connected-message" style="display: none;">
+        <p>Vous êtes déjà connecté en tant qu'administrateur.</p>
+    </div>
+
+    
+
+    <script src="../dist/listes.js"></script>
+</body>
+</html>

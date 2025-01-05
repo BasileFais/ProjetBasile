@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Appareil Photo</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Boutons de la navbar */
+        .navbar button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;  /* Taille des boutons similaire à ceux de la page listes */
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .navbar button:hover {
+            background-color: #45a049;
+        }
+
+        /* Main content */
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .case-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .case {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .case input, .case select, .case textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Bouton d'ajout */
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 25px;  /* Taille des boutons similaire à ceux de la page listes */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ajouter un Appareil Photo</h1>
+        <div class="navbar">
+            <button onclick="window.location.href='index.html'">Accueil</button>
+            <button onclick="window.location.href='listes.html'">Liste des Appareils</button>
+        </div>
+    </header>
+
+    <main>
+        <form id="form-ajout">
+            <div class="case-container">
+                <!-- Case Marque -->
+                <div class="case">
+                    <label for="brand">Marque :</label>
+                    <input type="text" id="brand" name="brand" required>
+                </div>
+                
+                <!-- Case Modèle -->
+                <div class="case">
+                    <label for="model">Modèle :</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+
+                <!-- Case Prix -->
+                <div class="case">
+                    <label for="price">Prix :</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+
+                <!-- Case Caractéristiques -->
+                <div class="case">
+                    <label for="features">Caractéristiques :</label>
+                    <textarea id="features" name="features" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Ajouter l'Appareil</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AppareilShop. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../dist/ajout.js"></script>
+</body>
+</html>
