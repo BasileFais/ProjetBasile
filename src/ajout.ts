@@ -1,33 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("appareil-form") as HTMLFormElement | null;
+    const form = document.getElementById("form-ajout") as HTMLFormElement | null;
     const brandInput = document.getElementById("brand") as HTMLInputElement | null;
     const modelInput = document.getElementById("model") as HTMLInputElement | null;
     const priceInput = document.getElementById("price") as HTMLInputElement | null;
-    const featuresInput = document.getElementById("features") as HTMLInputElement | null;
+    const featuresInput = document.getElementById("features") as HTMLTextAreaElement | null;
 
-    // Charger les appareils existants du localStorage
-    const appareils: { brand: string, model: string, price: string, features: string[] }[] = JSON.parse(localStorage.getItem("appareils") || "[]");
-
-    if (form) {
+    if (form && brandInput && modelInput && priceInput && featuresInput) {
         form.addEventListener("submit", (event: Event) => {
-            event.preventDefault(); // Empêche la soumission normale du formulaire
+            event.preventDefault();
 
-            // Créer un objet pour le nouvel appareil
             const newCamera = {
-                brand: brandInput?.value || "",
-                model: modelInput?.value || "",
-                price: priceInput?.value || "",
-                features: featuresInput?.value.split(',').map(feature => feature.trim()) || []
+                brand: brandInput.value.trim(),
+                model: modelInput.value.trim(),
+                price: parseFloat(priceInput.value.trim()),
+                features: featuresInput.value.split(',').map(feature => feature.trim())
             };
 
-            // Ajouter le nouvel appareil à la liste existante
-            appareils.push(newCamera);
-
-            // Sauvegarder la liste mise à jour dans le localStorage
-            localStorage.setItem("appareils", JSON.stringify(appareils));
-
-            // Rediriger vers la page de liste des appareils après l'ajout
-            window.location.href = "listes.html";
+            fetch('/addCamera', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newCamera)
+            })
+            .then(response => response.text())
+            .then(message => {
+                console.log(message);
+                window.location.href = "listes.html";
+            })
+            .catch(error => {
+                console.error('Erreur lors de l\'ajout de l\'appareil:', error);
+            });
         });
     }
 });
+
+export {}; // Pour éviter les erreurs dans les environnements modulaires.

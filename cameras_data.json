@@ -1,0 +1,17 @@
+{
+    "cameras": [
+      {
+        "brand": "Canon",
+        "model": "EOS 90D",
+        "price": 1200,
+        "features": ["24.1 MP", "4K video", "WiFi"]
+      },
+      {
+        "brand": "Nikon",
+        "model": "D7500",
+        "price": 900,
+        "features": ["20.9 MP", "4K video", "Bluetooth"]
+      }
+    ]
+  }
+  
